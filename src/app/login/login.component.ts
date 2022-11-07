@@ -12,6 +12,14 @@ export class LoginComponent implements OnInit {
   IamLogin() {
     this.authenticationService.login();
   }
+
+  IamLogout() {
+    this.authenticationService.logout();
+  }
+
+  getToken() {
+    console.log(this.authenticationService.getAccessToken());
+  }
   ngOnInit(): void {
     // this.authenticationService.login();
   }
