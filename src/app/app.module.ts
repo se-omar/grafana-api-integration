@@ -12,6 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatExpansionModule } from '@angular/material/expansion';
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { LoginComponent } from './login/login.component';
+import { LoginSuccessComponent } from './login-success/login-success.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     HomeComponent,
     FoldersAndDashboardsComponent,
     CreateDashboardComponent,
+    LoginComponent,
+    LoginSuccessComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,12 +31,17 @@ import { MatExpansionModule } from '@angular/material/expansion';
     RouterModule,
     HttpClientModule,
     MatButtonModule,
+    OAuthModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'create-dashboard', component: CreateDashboardComponent },
       {
         path: 'folders-and-dashboards',
         component: FoldersAndDashboardsComponent,
+      },
+      {
+        path: 'login-success',
+        component: LoginSuccessComponent,
       },
     ]),
     BrowserAnimationsModule,

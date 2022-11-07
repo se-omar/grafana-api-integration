@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   appBaseUrl: 'http://localhost:4200/',
-  clientId: '3f7f6e60-ea48-4813-ba99-c42ba29d2dd7',
+  clientId: 'd79ebbb0-e3b8-4d20-aa60-859d26ba2caa',
+  IAMUrl: 'http://localhost:8880',
 };
 
 /*
