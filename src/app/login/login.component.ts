@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   getToken() {
-    console.log(this.authenticationService.getAccessToken());
+    console.log(this.authenticationService.hasValidAccessToken());
   }
   ngOnInit(): void {
     // this.authenticationService.login();

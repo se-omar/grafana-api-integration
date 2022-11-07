@@ -40,6 +40,10 @@ import { LoginSuccessComponent } from './login-success/login-success.component';
         component: FoldersAndDashboardsComponent,
       },
       {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
         path: 'login-success',
         component: LoginSuccessComponent,
       },
