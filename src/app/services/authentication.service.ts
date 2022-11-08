@@ -15,6 +15,7 @@ export class AuthenticationService {
       issuer: environment.IAMUrl,
       redirectUri: 'http://localhost:4200/login-success',
       clientId: environment.clientId,
+      dummyClientSecret: environment.clientSecret,
       silentRefreshRedirectUri: 'http://localhost:4200/login-success',
       useSilentRefresh: true,
       logoutUrl: window.location.origin + '/login',
@@ -24,7 +25,7 @@ export class AuthenticationService {
       scope: 'openid IdentityServerApi offline_access',
       silentRefreshTimeout: 5000,
     });
-    this.oauthService.setStorage(sessionStorage);
+    this.oauthService.setStorage(localStorage);
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
     this.oauthService.loadDiscoveryDocumentAndTryLogin();
     //this.oauthService.setupAutomaticSilentRefresh();
@@ -60,7 +61,8 @@ export class AuthenticationService {
   }
 
   getAccessToken() {
-    this.oauthService.getAccessToken();
+    // this.oauthService.getAccessToken();
+    return localStorage.getItem('access_token');
   }
 
   setupAutomaticLogoutInCaseOfTokenExpiry() {

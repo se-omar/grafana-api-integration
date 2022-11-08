@@ -9,7 +9,18 @@ import { AuthenticationService } from '../services/authentication.service';
 export class LoginSuccessComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService) {}
 
-  ngOnInit(): void {
-    console.log(this.authenticationService.getAccessToken());
+  IamLogout() {
+    this.authenticationService.logout();
   }
+
+  getToken() {
+    console.log(this.authenticationService.getAccessToken());
+    // console.log(localStorage.getItem('access_token'));
+  }
+
+  verifyToken() {
+    console.log(this.authenticationService.hasValidAccessToken());
+  }
+
+  ngOnInit(): void {}
 }

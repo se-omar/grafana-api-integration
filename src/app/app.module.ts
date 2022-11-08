@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatExpansionModule } from '@angular/material/expansion';
-import { OAuthModule } from 'angular-oauth2-oidc';
+import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
 import { LoginComponent } from './login/login.component';
 import { LoginSuccessComponent } from './login-success/login-success.component';
 
@@ -51,7 +51,12 @@ import { LoginSuccessComponent } from './login-success/login-success.component';
     BrowserAnimationsModule,
     MatExpansionModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: OAuthStorage,
+      useValue: localStorage,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

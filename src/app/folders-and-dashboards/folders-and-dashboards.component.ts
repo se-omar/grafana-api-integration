@@ -3,6 +3,7 @@ import { Folder } from '../models/folder';
 import { DashboardService } from './dashboard.service';
 import { MatAccordion } from '@angular/material/expansion';
 import { Dashboard } from '../models/dashboard';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-folders-and-dashboards',
@@ -16,12 +17,19 @@ export class FoldersAndDashboardsComponent {
   error: any;
   panelOpenState?: boolean;
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(
+    private dashboardService: DashboardService,
+    private authenticationService: AuthenticationService
+  ) {}
   showFolders() {
-    this.dashboardService.getFolders().subscribe((data: Folder[]) => {
-      this.folders = data;
-      console.log(this.folders);
-    });
+    if (this.authenticationService.hasValidAccessToken()) {
+      this.dashboardService.getFolders().subscribe((data: Folder[]) => {
+        this.folders = data;
+        console.log(this.folders);
+      });
+      return;
+    }
+    alert('Please Login to IAM first');
   }
 
   showDashboards(folder: Folder) {
