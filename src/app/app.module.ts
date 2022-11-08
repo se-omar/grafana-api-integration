@@ -13,9 +13,10 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
-import { LoginComponent } from './login/login.component';
-import { LoginSuccessComponent } from './login-success/login-success.component';
+import { LoginSuccessComponent } from './pages/login-success/login-success.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { FoldersComponent } from './pages/folders/folders.component';
+import { DashboardsComponent } from './pages/dashboards/dashboards.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,9 @@ import { AuthGuardService } from './services/auth-guard.service';
     HomeComponent,
     FoldersAndDashboardsComponent,
     CreateDashboardComponent,
-    LoginComponent,
     LoginSuccessComponent,
+    FoldersComponent,
+    DashboardsComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,12 @@ import { AuthGuardService } from './services/auth-guard.service';
         component: HomeComponent,
         canActivate: [AuthGuardService],
       },
+
+      {
+        path: 'folders',
+        component: FoldersComponent,
+        canActivate: [AuthGuardService],
+      },
       {
         path: 'create-dashboard',
         component: CreateDashboardComponent,
@@ -48,10 +56,6 @@ import { AuthGuardService } from './services/auth-guard.service';
         path: 'folders-and-dashboards',
         component: FoldersAndDashboardsComponent,
         canActivate: [AuthGuardService],
-      },
-      {
-        path: 'login',
-        component: LoginComponent,
       },
       {
         path: 'login-success',

@@ -1,0 +1,28 @@
+<p>folders works!</p>
+<div>
+  <!-- <span *ngIf="folders != []">
+    <mat-accordion>
+      <mat-expansion-panel
+        (opened)="showDashboards(folder)"
+        *ngFor="let folder of folders"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title> {{ folder.id }} </mat-panel-title>
+          <mat-panel-description>
+            {{ folder.title }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <span *ngIf="folder.dashboards; else no_dashboards">
+          <h2 *ngFor="let dashboard of folder.dashboards">
+            dashboard title: {{ dashboard.title }}
+          </h2>
+        </span>
+        <ng-template #no_dashboards>no dashboards</ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </span> -->
+
+  <span *ngIf="folders">
+    <h1 *ngFor="let folder of folders">{{ folder.title }}</h1>
+  </span>
+</div>

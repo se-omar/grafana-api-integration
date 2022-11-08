@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Dashboard } from '../models/dashboard';
+import { Dashboard } from '../../models/dashboard';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { Folder } from '../models/folder';
+import { Folder } from '../../models/folder';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
-export class DashboardService {
+export class FoldersService {
   //   dashboard?: Dashboard;
   foldersUrl = 'http://localhost/api/folders';
   dashboardsUrl = 'http://localhost/api/search';

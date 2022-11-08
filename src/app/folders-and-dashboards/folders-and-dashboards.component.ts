@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Folder } from '../models/folder';
-import { DashboardService } from './dashboard.service';
+import { FoldersService } from '../pages/folders/folders.service';
 import { MatAccordion } from '@angular/material/expansion';
 import { Dashboard } from '../models/dashboard';
 import { AuthenticationService } from '../services/authentication.service';
@@ -9,7 +9,7 @@ import { AuthenticationService } from '../services/authentication.service';
   selector: 'app-folders-and-dashboards',
   templateUrl: './folders-and-dashboards.component.html',
   styleUrls: ['./folders-and-dashboards.component.css'],
-  providers: [DashboardService],
+  providers: [FoldersService],
 })
 export class FoldersAndDashboardsComponent {
   folders: Folder[] = [];
@@ -18,7 +18,7 @@ export class FoldersAndDashboardsComponent {
   panelOpenState?: boolean;
 
   constructor(
-    private dashboardService: DashboardService,
+    private dashboardService: FoldersService,
     private authenticationService: AuthenticationService
   ) {}
   showFolders() {
