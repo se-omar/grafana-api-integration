@@ -24,6 +24,7 @@ export class AuthenticationService {
       scope: 'openid IdentityServerApi offline_access',
       silentRefreshTimeout: 5000,
     });
+    this.oauthService.setStorage(sessionStorage);
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
     this.oauthService.loadDiscoveryDocumentAndTryLogin();
     //this.oauthService.setupAutomaticSilentRefresh();

@@ -18,8 +18,13 @@ export class LoginComponent implements OnInit {
   }
 
   getToken() {
+    console.log(sessionStorage.getItem('access_token'));
+  }
+
+  verifyToken() {
     console.log(this.authenticationService.hasValidAccessToken());
   }
+
   ngOnInit(): void {
     // this.authenticationService.login();
   }
