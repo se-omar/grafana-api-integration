@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Folder } from '../models/folder';
-import { FoldersService } from '../pages/folders/folders.service';
+import { Folder } from '../../models/folder';
+import { FoldersService } from '../folders/folders.service';
 import { MatAccordion } from '@angular/material/expansion';
-import { Dashboard } from '../models/dashboard';
-import { AuthenticationService } from '../services/authentication.service';
+import { Dashboard } from '../../models/dashboard';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-folders-and-dashboards',

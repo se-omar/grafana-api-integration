@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { FoldersAndDashboardsComponent } from './folders-and-dashboards/folders-and-dashboards.component';
+import { FoldersAndDashboardsComponent } from './pages/folders-and-dashboards/folders-and-dashboards.component';
 import { CreateDashboardComponent } from './create-dashboard/create-dashboard.component';
 // import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,13 +48,8 @@ import { DashboardsComponent } from './pages/dashboards/dashboards.component';
         canActivate: [AuthGuardService],
       },
       {
-        path: 'create-dashboard',
-        component: CreateDashboardComponent,
-        canActivate: [AuthGuardService],
-      },
-      {
-        path: 'folders-and-dashboards',
-        component: FoldersAndDashboardsComponent,
+        path: 'dashboards/:folderId',
+        component: DashboardsComponent,
         canActivate: [AuthGuardService],
       },
       {

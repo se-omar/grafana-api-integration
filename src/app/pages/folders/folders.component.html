@@ -22,7 +22,13 @@
     </mat-accordion>
   </span> -->
 
-  <span *ngIf="folders">
-    <h1 *ngFor="let folder of folders">{{ folder.title }}</h1>
-  </span>
+  <div *ngIf="folders">
+    <button
+      (click)="viewDashboards(folder)"
+      style="display: block; margin-bottom: 10px"
+      *ngFor="let folder of folders"
+    >
+      {{ folder.title }}
+    </button>
+  </div>
 </div>

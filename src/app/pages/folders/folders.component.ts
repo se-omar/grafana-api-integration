@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Folder } from '../../models/folder';
 import { FoldersService } from './folders.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-folders',
   templateUrl: './folders.component.html',
@@ -15,7 +16,8 @@ export class FoldersComponent implements OnInit {
 
   constructor(
     private authService: AuthenticationService,
-    private foldersService: FoldersService
+    private foldersService: FoldersService,
+    private router: Router
   ) {}
   showFolders() {
     if (this.authService.hasValidAccessToken()) {
@@ -26,6 +28,11 @@ export class FoldersComponent implements OnInit {
       return;
     }
     alert('Please Login to IAM first');
+  }
+
+  viewDashboards(folder: Folder) {
+    console.log(folder);
+    this.router.navigate(['/dashboards', folder.id]);
   }
 
   // showDashboards(folder: Folder) {

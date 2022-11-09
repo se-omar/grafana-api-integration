@@ -1,28 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Dashboard } from '../../models/dashboard';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Folder } from '../../models/folder';
 import { environment } from 'src/environments/environment';
-import { Dashboard } from 'src/app/models/dashboard';
 @Injectable({
   providedIn: 'root',
 })
-export class FoldersService {
+export class DashboardsService {
   //   dashboard?: Dashboard;
   foldersUrl = environment.foldersUrl;
   dashboardsUrl = environment.dashboardsUrl;
   apiKey = environment.apiKey;
+  folderId?: number;
   constructor(private http: HttpClient) {}
-
-  getFolders() {
-    const headers = new HttpHeaders().set(
-      'Authorization',
-      `Bearer ${this.apiKey}`
-    );
-    return this.http.get<Folder[]>(this.foldersUrl, {
-      responseType: 'json',
-      headers: headers,
-    });
-  }
 
   getDashboards(folderId?: number) {
     const headers = new HttpHeaders().set(
