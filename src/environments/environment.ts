@@ -12,6 +12,7 @@ export const environment = {
   dashboardsUrl: 'http://localhost/api/search',
   apiKey:
     'eyJrIjoiMW1IbjQ0ejJrN2phZHc0OFJtQlpGU0w0aTNPVDVNTzQiLCJuIjoidGVzdC1rZXkyIiwiaWQiOjF9',
+  grafanaUrl: 'http://localhost:3000'
 };
 
 /*

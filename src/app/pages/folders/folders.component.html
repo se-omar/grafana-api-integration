@@ -24,6 +24,7 @@
 
   <div *ngIf="folders">
     <button
+      mat-raised-button
       (click)="viewDashboards(folder)"
       style="display: block; margin-bottom: 10px"
       *ngFor="let folder of folders"

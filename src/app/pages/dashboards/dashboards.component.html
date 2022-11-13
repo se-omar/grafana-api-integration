@@ -1,6 +1,7 @@
-<p>dashboards works!</p>
 <div *ngIf="dashboards">
   <div *ngFor="let dashboard of dashboards">
-    <h1>{{ dashboard.title }}</h1>
+    <button mat-raised-button (click)="goToDashboard(dashboard)">{{ dashboard.title }}</button>
+  <br/>
+  <br/>
   </div>
 </div>
