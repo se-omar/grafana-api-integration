@@ -1,101 +1,104 @@
+.css-i5ylvt-SectionBody.edzex7k0 {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
 
-    .css-i5ylvt-SectionBody.edzex7k0 {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-    }
+.css-18dff5v-EllipsifiedRoot-ellipsifyCss-CardTitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #4c5773;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  max-width: 100%;
+}
 
-    .css-18dff5v-EllipsifiedRoot-ellipsifyCss-CardTitle {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        color: #4c5773;
-        font-size: 1rem;
-        font-weight: bold;
-        margin-left: 1rem;
-        max-width: 100%;
-    }
+.css-xld39j-LinkRoot-CardRoot {
+  padding: 1.5rem;
+}
 
-    .css-xld39j-LinkRoot-CardRoot {
-        padding: 1.5rem;
-    }
+.css-xld39j-LinkRoot-CardRoot {
+  transition: opacity 0.3s linear;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 1px solid #eeecec;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 7px 20px rgb(0 0 0 / 8%);
+}
 
-    .css-xld39j-LinkRoot-CardRoot {
-        transition: opacity 0.3s linear;
-        display: flex;
-        -webkit-box-align: center;
-        align-items: center;
-        border: 1px solid #eeecec;
-        border-radius: 0.5rem;
-        background-color: #ffffff;
-        box-shadow: 0 7px 20px rgb(0 0 0 / 8%);
-    }
+.css-162qkw6-StyledSVG-StyledIcon-CardIcon {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  color: #37bc9b;
+  width: 1rem;
+  height: 1rem;
+}
 
-    .css-162qkw6-StyledSVG-StyledIcon-CardIcon {
-        -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
-        display: block;
-        -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-        color: #37bc9b;
-        width: 1rem;
-        height: 1rem;
-    }
+body {
+  font-family: var(--default-font-family), sans-serif;
+  font-size: 0.875em;
+  font-weight: 400;
+  font-style: normal;
+  color: #4c5773;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fbfc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-    body {
-        font-family: var(--default-font-family), sans-serif;
-        font-size: 0.875em;
-        font-weight: 400;
-        font-style: normal;
-        color: #4c5773;
-        margin: 0;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        background-color: #f9fbfc;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
+.css-i5ylvt-SectionBody {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5rem;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
 
-    .css-i5ylvt-SectionBody {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        gap: 1.5rem;
-        -webkit-box-flex-wrap: wrap;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
+body,
+div,
+nav,
+article,
+section,
+main,
+header,
+footer,
+input,
+form,
+table,
+fieldset,
+textarea,
+ul,
+li,
+span {
+  box-sizing: border-box;
+}
 
-    body,
-    div,
-    nav,
-    article,
-    section,
-    main,
-    header,
-    footer,
-    input,
-    form,
-    table,
-    fieldset,
-    textarea,
-    ul,
-    li,
-    span {
-        box-sizing: border-box;
-    }
+.Formula__formula___dc7_F {
+  background-color: #f9fbfc;
+  cursor: pointer;
+}
 
-    .Formula__formula___dc7_F {
-        background-color: #f9fbfc;
-        cursor: pointer;
-    }
+a {
+  cursor: pointer;
+}
 
-    .css-i5ylvt-SectionBody.edzex7k0 {
-        padding-top: 150px;
-        padding-left: 80px;
-    }
+.css-i5ylvt-SectionBody.edzex7k0 {
+  padding-top: 20px;
+  padding-left: 20px;
+}
