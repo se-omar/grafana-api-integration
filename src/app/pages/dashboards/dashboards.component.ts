@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 import { Dashboard } from 'src/app/models/dashboard'
 import { environment } from 'src/environments/environment'
 import { DashboardsService } from './dashboards.service'
@@ -14,7 +14,8 @@ export class DashboardsComponent implements OnInit {
   dashboards?: Dashboard[]
   constructor(
     private route: ActivatedRoute,
-    private dashboardsService: DashboardsService
+    private dashboardsService: DashboardsService,
+    private router: Router
   ) {
     this.route.params.subscribe(
       (params) => (this.folderId = params['folderId'])
@@ -32,7 +33,8 @@ export class DashboardsComponent implements OnInit {
 
   goToDashboard(dashboard: Dashboard) {
     console.log('dashboarddddd', dashboard)
-    window.location.href = environment.grafanaUrl + dashboard.url
+    // window.location.href = environment.grafanaUrl + dashboard.url
+    this.router.navigate(['/grafana-iframe',  dashboard.uid,  dashboard.url.split('/')[3]])
   }
 
   ngOnInit(): void {

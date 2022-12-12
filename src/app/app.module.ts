@@ -16,7 +16,8 @@ import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc'
 import { LoginSuccessComponent } from './pages/login-success/login-success.component'
 import { AuthGuardService } from './services/auth-guard.service'
 import { FoldersComponent } from './pages/folders/folders.component'
-import { DashboardsComponent } from './pages/dashboards/dashboards.component'
+import { DashboardsComponent } from './pages/dashboards/dashboards.component';
+import { GrafanaIframeComponent } from './pages/grafana-iframe/grafana-iframe.component'
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DashboardsComponent } from './pages/dashboards/dashboards.component'
     LoginSuccessComponent,
     FoldersComponent,
     DashboardsComponent,
+    GrafanaIframeComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +57,11 @@ import { DashboardsComponent } from './pages/dashboards/dashboards.component'
       {
         path: 'login-success',
         component: LoginSuccessComponent,
+      },
+      {
+        path: 'grafana-iframe/:dbUid/:dbName',
+        component: GrafanaIframeComponent,
+        canActivate: [AuthGuardService],
       },
     ]),
     BrowserAnimationsModule,
