@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
-import { JwksValidationHandler, OAuthService } from 'angular-oauth2-oidc';
+import { Router, UrlTree } from '@angular/router';
+import {
+  JwksValidationHandler,
+  OAuthEvent,
+  OAuthService,
+} from 'angular-oauth2-oidc';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor(private oauthService: OAuthService) {
+  constructor(private oauthService: OAuthService, private router: Router) {
     this.configureIAM();
   }
 
@@ -16,7 +21,7 @@ export class AuthenticationService {
       redirectUri: 'http://localhost:4200/login-success',
       clientId: environment.clientId,
       dummyClientSecret: environment.clientSecret,
-      silentRefreshRedirectUri: 'http://localhost:4200/login-success',
+      //   silentRefreshRedirectUri: 'http://localhost:4200/login-success',
       useSilentRefresh: true,
       logoutUrl: window.location.origin + '/login',
       responseType: 'code',
@@ -27,6 +32,16 @@ export class AuthenticationService {
     });
     this.oauthService.setStorage(localStorage);
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
+    this.oauthService.events.subscribe(({ type }: OAuthEvent) => {
+
+        let returnUrl: any = sessionStorage.getItem("returnUrl");
+      switch (type) {
+        case 'token_received':
+            console.log("return url is: ", returnUrl)
+            window.location.href = returnUrl
+          break;
+      }
+    });
     this.oauthService.loadDiscoveryDocumentAndTryLogin();
     //this.oauthService.setupAutomaticSilentRefresh();
     //this.oauthService.setupAutomaticSilentRefresh();
@@ -34,6 +49,8 @@ export class AuthenticationService {
   }
 
   login() {
+    console.log('current url is: ', window.location.href);
+    sessionStorage.setItem('returnUrl', window.location.href);
     this.oauthService.initLoginFlow();
   }
 
