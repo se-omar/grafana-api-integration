@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   appBaseUrl: 'http://localhost:4200/',
-  clientId: 'd79ebbb0-e3b8-4d20-aa60-859d26ba2caa',
-  clientSecret: '5b238ef2-b325-495c-a43e-806394f0365b',
-  IAMUrl: 'http://localhost:8880',
-  foldersUrl: 'http://localhost/api/folders',
-  dashboardsUrl: 'http://localhost/api/search',
+  clientId: '3f7f6e60-ea48-4813-ba99-c42ba29d2dd7',
+  clientSecret: '799a9e85-22ff-437d-8d8b-1f4782464791',
+  IAMUrl: 'http://iam.omar.com',
+  foldersUrl: 'http://grafana.omar.com:90/api/folders',
+  dashboardsUrl: 'http://grafana.omar.com:90/api/search',
   apiKey:
     'eyJrIjoiMW1IbjQ0ejJrN2phZHc0OFJtQlpGU0w0aTNPVDVNTzQiLCJuIjoidGVzdC1rZXkyIiwiaWQiOjF9',
-  grafanaUrl: 'http://localhost:3000'
+  grafanaUrl: 'http://grafana.omar.com:90'
 };
 
 /*

@@ -18,7 +18,7 @@ export class AuthenticationService {
   configureIAM() {
     this.oauthService.configure({
       issuer: environment.IAMUrl,
-      redirectUri: 'http://localhost:4200/login-success',
+      redirectUri: 'http://grafana.omar.com:91/login-success',
       clientId: environment.clientId,
       dummyClientSecret: environment.clientSecret,
       //   silentRefreshRedirectUri: 'http://localhost:4200/login-success',
