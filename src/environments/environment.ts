@@ -11,7 +11,7 @@ export const environment = {
   foldersUrl: 'http://grafana.omar.com:90/api/folders',
   dashboardsUrl: 'http://grafana.omar.com:90/api/search',
   apiKey:
-    'eyJrIjoiMW1IbjQ0ejJrN2phZHc0OFJtQlpGU0w0aTNPVDVNTzQiLCJuIjoidGVzdC1rZXkyIiwiaWQiOjF9',
+    'eyJrIjoiaWZ3VEx4Q2hmRWhMdHhyNjFNdGJWUVBBelliMGJFSnEiLCJuIjoiYXBpIiwiaWQiOjF9',
   grafanaUrl: 'http://grafana.omar.com:90'
 };
 

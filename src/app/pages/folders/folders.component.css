@@ -21,6 +21,7 @@
 
 .css-xld39j-LinkRoot-CardRoot {
   transition: opacity 0.3s linear;
+  width: 15%;
   display: flex;
   -webkit-box-align: center;
   align-items: center;
